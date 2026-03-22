@@ -76,13 +76,19 @@ public class linkedliststudent {
 
     public student remove(int id){
         if(!isEmpty()){
-            student current = first;
+            if(last.id == id){
+              student temp = last;
+              last = last.previous;
+              last.next = null;
+              return temp;
+            }
             if(first.id == id){
                 student temp = first;
                 first = first.next;
                 first.previous = null;
                 return temp;
             }else{
+                student current;
                 current = find(id);
                 if(current != null){
                     student temp = current;
