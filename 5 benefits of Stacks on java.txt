@@ -1,5 +1,0 @@
-Undo/Redo Operations in Text Editors
-Back and forward on file manager and web browser
-Compiler Syntax Checking
-Expression Evaluation
-Memory Management
