@@ -1,3 +1,5 @@
+package Linkedlist;
+
 public class linkedliststudent {
   private student first;
   private student last;
