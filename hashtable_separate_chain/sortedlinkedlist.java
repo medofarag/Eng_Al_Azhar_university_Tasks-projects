@@ -19,7 +19,6 @@ public class sortedlinkedlist {
     }
 
     if (find(national_number) != null) {
-      System.out.println("this national_number is already exist");
       return;
     }
 
@@ -51,7 +50,6 @@ public class sortedlinkedlist {
 
   public person find(int national_number) {
     if (isEmpty()) {
-      System.out.println("this base is empty");
       return null;
     }
 
@@ -60,24 +58,24 @@ public class sortedlinkedlist {
       current = current.next;
     }
 
-    if (current == null) {
-      System.out.println("this person does not exist");
-    }
-
     return current;
   }
 
   public person remove(int national_number) {
     if (isEmpty()) {
-      System.out.println("this base is empty");
       return null;
     }
 
     person target = find(national_number);
 
     if (target == null) {
-      System.out.println("this person does not exist");
       return null;
+    }
+
+    if (first == last) {
+      first = null;
+      last = null;
+      return target;
     }
 
     if (target.next != null) {
@@ -95,6 +93,18 @@ public class sortedlinkedlist {
     }
 
     return target;
+  }
+
+  public void display_data() {
+    if (isEmpty()) {
+      return;
+    }
+
+    person current = first;
+    while (current != null) {
+      current.display_Details();
+      current = current.next;
+    }
   }
 
   public boolean isEmpty() {
